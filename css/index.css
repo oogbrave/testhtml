@@ -1,0 +1,86 @@
+
+
+@import url(./reset.css);
+
+:root {
+    --page-width :1536px;
+}
+/* 코드의 효율성을 높이기 위함, 속성의 이름을 만들고 코드안에 이름을 넣음..
+익숙해지면 편해짐, 수정 시 root에서 바꾸면 한번에 전체 수정됨 */
+
+
+/* header */
+header { 
+    width: var(--page-width); margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+header > h1 {}
+header > h1 > a {
+    padding: 0 20px;
+}
+
+header > h1 > nav {}
+header > h1 > nav > a {}
+
+header > h1 > div {}
+header > h1 > div >a {}
+
+
+/* main */
+main { width: var(--page-width);}
+
+.spot {
+    position: relative;
+}
+.spot > img {
+    width: 100%;
+    border-radius: 5%;
+}
+.spot > figcaption {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #5E452D;
+}
+.spot > figcaption > b {
+    text-align: center;
+    font-size: 3.5em;
+    /* html{20} - figure{3rem} - figure>b {2rem} 이런식으로 설정해두면 
+    html쪽만 수정하면 나머지가 다 수정되서 rem 사용하는 것이 편함 */
+    line-height: 1.4;
+    animation: txt 1s forwards;
+}
+.spot > figcaption > p {
+    margin-top: 20px;
+    animation: txt 1s 0.5s forwards;
+    transform: translateY(100%);
+    opacity: 0;
+    /* 애니메이션 딜레이 때문에 텍스트가 겹쳐서 작은 텍스트도 늦게 나오게끔 설정 */
+}
+
+@keyframes txt {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+footer { width: var(--page-width);}
+
+
+/* 파비콘 만들기
+https://favicomatic.com/ 
+파일 다운 - 파일은 img폴더에 낱개이동 - 링크 코드 html title 밑에 복붙하기 - 폴더 경로설정 확인하기*/
